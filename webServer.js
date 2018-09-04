@@ -265,9 +265,9 @@ app.post('/admin/logout', async (req, res) => {
     user.last_activity = savedAct;
     const savedUser = await user.save();
     delete req.session.loggedUser;
-
     res.end();
-  } catch (e) {
+  } 
+  catch (e) {
     sendError('Error at /admin/logout', e, res);
   }
 });
@@ -290,8 +290,8 @@ app.get('/user/list', async (req, res) => {
       .populate('last_activity').lean(); 
 
     res.end(JSON.stringify(users));
-
-  } catch (e) {
+  } 
+  catch (e) {
     sendError('Error at /user/list', e, res);
   }
 });
@@ -447,7 +447,8 @@ app.get('/mostCommentedPhoto/:id', async (req, res) => {
     ), photos[0]);
 
     res.end(JSON.stringify(mostCommentedPhoto));
-  } catch (e) {
+  } 
+  catch (e) {
     sendError('Error at /mostCommentedPhoto/:id', e, res);
   }
 });
@@ -464,7 +465,8 @@ app.get('photo/:id', async (req, res) => {
   try {
     const photo = Photos.findOne({_id: id}).lean();
     res.end(JSON.stringify(photo));
-  } catch (e) {
+  } 
+  catch (e) {
     sendError('Error at /photo/:id', e, res);
   }
 });
@@ -514,8 +516,8 @@ app.post('/user', async (req, res) => {
     savedUser.last_activity = savedAct;
     const savedUser2 = await savedUser.save();
     res.end();
-
-  } catch (e) {
+  } 
+  catch (e) {
     sendError('Error at /user', e, res);
   }
 });
@@ -570,8 +572,8 @@ app.post('/commentsOfPhoto/:id', async (req, res) => {
     delete newComment.user_id;
     newComment.user = savedUser;
     res.end(JSON.stringify(newComment));
-
-  } catch (e) {
+  } 
+  catch (e) {
     sendError('Error at /commentsOfPhoto/:id', e, res);
   }
 });
@@ -602,8 +604,8 @@ app.post('/likePhoto/:id', async (req, res) => {
     photo.likes.push(newLike);
     const savedPhoto = await Photo.findByIdAndUpdate(photo._id, photo);
     res.end(JSON.stringify(newLike));
-
-  } catch (e) {
+  } 
+  catch (e) {
     sendError('Error at /likePhoto/:id', e, res);
   }
 });
@@ -632,8 +634,8 @@ app.post("/unlikePhoto/:id", async (req, res) => {
     const removed = photo.likes.splice(indexForRemoval, 1);
     const savedPhoto = await Photo.findByIdAndUpdate(photo._id, photo);
     res.end(JSON.stringify(removed[0]));
-
-  } catch (e) {
+  } 
+  catch (e) {
     sendError('Error at /unlikePhoto/:id', e, res);
   }
 });
@@ -679,8 +681,8 @@ app.post('/photos/new', async (req, res) => {
         user.last_activity = savedAct;
         const savedUser = await user.save();
         res.end();
-
-      } catch (e) {
+      } 
+      catch (e) {
         sendError('Error at /photos/new', e, res);
       }
     });
