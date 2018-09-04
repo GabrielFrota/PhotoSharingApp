@@ -12,11 +12,12 @@ the problems. File webServer.js is the node back-end, which is rewritten already
 I would write Javascript at the moment, and that's why I'm putting this project here. I'll start rewriting the 
 front-end now, but it will probably take a while to finish it. To run the project follow the steps:
 
--MEAN stack needs to be installed and mongoDB running <br />
--clone the repository <br />
--npm install <br />
--node loadDatabase.js <br />
--node webServer.js <br />
--loadDatabase script inserts some initial users in the database. Their login credentials are their
+- MEAN stack needs to be installed and mongoDB running <br />
+- clone the repository <br />
+- npm install <br />
+- node loadDatabase.js <br />
+- node webServer.js <br />
+- loadDatabase script inserts some initial users in the database. Their login credentials are their
 lower case last name as username, and the string 'weak' as password. 
-The initial users are ["Malcolm", "Ripley", "Took", "Kenobi", "Ludgate", "Ousterhout"]
+The initial users are <br />
+["Malcolm", "Ripley", "Took", "Kenobi", "Ludgate", "Ousterhout"]
