@@ -1,0 +1,28 @@
+/*
+CSS for the CS142 project #5 main page
+
+Since CSS uses a global name space for classes we should use class names starting with
+cs142-main- here.
+*/
+
+.cs142-main-nameP
+{
+	margin-left: 10px ;
+	width: 10% ;
+	font-size: 20px ;
+}
+
+.cs142-main-userP
+{
+	position: relative ;
+	left: 50% ;
+	margin-right: 40px ;
+	font-size: 20px ;
+	text-align: right ;
+}
+
+md-toolbar .md-menu
+{
+	margin: 0px 0px ;
+	height: 100% ;
+}

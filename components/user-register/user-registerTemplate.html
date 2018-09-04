@@ -1,0 +1,43 @@
+<div class="cs142-userRegister">
+	<md-input-container>
+		<label>First Name</label>
+		<input type="text" ng-model="first_name">
+	</md-input-container> </br>
+	<md-input-container>
+		<label>Last Name</label>
+		<input type="text" ng-model="last_name">
+	</md-input-container> </br>
+	<md-input-container>
+		<label>Location</label>
+		<input type="text" ng-model="location">
+	</md-input-container> </br>
+	<md-input-container>
+		<label>Description</label>
+		<input type="text" ng-model="description">
+	</md-input-container> </br>
+	<md-input-container>
+		<label>Occupation</label>
+		<input type="text" ng-model="occupation">
+	</md-input-container> </br>
+	<md-input-container>
+		<label>Login Name</label>
+		<input type="text" ng-model="login_name">
+	</md-input-container> </br>
+	<md-input-container>
+		<label>Password</label>
+		<input type="password" ng-model="password">
+	</md-input-container> </br>
+	<md-input-container>
+		<label>Re-enter Password</label>
+		<input type="password" ng-model="passwordRe">
+	</md-input-container>
+	<div ng-if="errorMsg" class="cs142-userRegister-errorMsg">
+		<p>{{errorMsg}}</p>
+	</div>
+	<div ng-if="successMsg" class="cs142-userRegister-successMsg">
+		<p>{{successMsg}}</p>
+	</div>
+	<div>
+		<md-button ng-click="registerMe()">Register Me</md-button>
+	</div>
+</div>

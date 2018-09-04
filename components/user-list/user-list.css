@@ -1,0 +1,56 @@
+.cs142-userList-title .md-subheader-content
+{
+	font-size: 22px ; 
+}
+
+div.cs142-userList-listItem
+{
+	margin-bottom: 6px ;
+	margin-top: 6px ;
+}
+
+.cs142-userList-listItem p
+{
+	margin-top: 0px ;
+	margin-bottom: 0px ;
+}
+
+.cs142-userList-nameP
+{
+	font-size: 18px ;
+}
+
+.cs142-userList-nameP.loggedUser
+{
+	color: red ;
+}
+
+.cs142-userList-locationP
+{
+	font-size: 12px ;
+}
+
+.cs142-userList-locationP.loggedUser
+{
+	color: red ;
+}
+
+.cs142-userList-occupationP
+{
+	font-size: 12px ;
+}
+
+.cs142-userList-occupationP.loggedUser
+{
+	color: red ;
+}
+
+.cs142-userList-lastP
+{
+	font-size: 12px ;
+}
+
+.loggedUser
+{
+	color: red ;
+}

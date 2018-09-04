@@ -1,0 +1,24 @@
+<md-list>
+	<md-list-item ng-repeat="a in acts">
+		<div ng-if="a.activity_type === ACTIVITY_PHOTO_UPLOAD">
+			<p>New photo uploaded by {{a.user_name}}. {{a.date_time}}</p>
+			<img width="250px" ng-src="images/{{a.photo_file_name}}">
+		</div>
+		<div ng-if="a.activity_type === ACTIVITY_COMMENT_ADDED">
+			<p>New comment by {{a.user_name}}. {{a.date_time}}</p>
+			<figure>
+				<img width="250px" ng-src="images/{{a.photo_file_name}}">
+				<figcaption>{{a.comment_text}}</figcaption>
+			</figure>		
+		</div>
+		<div ng-if="a.activity_type === ACTIVITY_USER_REGISTER">
+			<p>New user {{a.user_name}} registered. {{a.date_time}}</p>
+		</div>
+		<div ng-if="a.activity_type === ACTIVITY_USER_LOG_IN">
+			<p>User {{a.user_name}} logged in. {{a.date_time}}</p>
+		</div>
+		<div ng-if="a.activity_type === ACTIVITY_USER_LOG_OUT">
+			<p>User {{a.user_name}} logged out. {{a.date_time}}</p>
+		</div>
+	</md-list-item>
+</md-list>

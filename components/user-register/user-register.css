@@ -1,0 +1,14 @@
+.cs142-userRegister
+{
+	margin: 4px ;
+}
+
+.cs142-userRegister-errorMsg
+{
+	color: red ;
+}
+
+.cs142-userRegister-successMsg
+{
+	color: green ;
+}

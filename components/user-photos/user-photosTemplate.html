@@ -1,0 +1,43 @@
+<md-list>
+	<md-list-item ng-repeat="p in photos">
+		<md-card class="cs142-userPhotos-card">
+			<md-card-header>
+				{{p.date_time}}
+			</md-card-header>
+			<img ng-src="images/{{p.file_name}}">
+			<div style="position: relative">
+				<p style="float:left; margin-left:4px">
+					{{p.likes.length}} likes
+				</p>		
+				<md-button ng-if="!p.liked" class="likeButton" ng-click="like(p._id)">
+					Like
+				</md-button>
+				<md-button ng-if="p.liked" class=likeButton ng-click="unlike(p._id)">
+					Unlike
+				</md-button>
+			</div>
+			<md-card-content>
+				<md-list>
+					<md-list-item ng-repeat="c in p.comments">
+						<div class="cs142-userPhotos-comment">
+							<div>
+								<a href="{{main.baseUrl}}/users/{{c.user._id}}">{{c.user.first_name + " " + c.user.last_name}}</a>
+								<span>{{c.date_time}}</span>
+							</div>
+							<p>{{c.comment}}</p>
+						</div>
+					</md-list-item>
+					<md-list-item>
+						<md-input-container>
+							<label>Send new comment</label>
+							<textarea rows="4" cols="70" ng-model="newComments[p._id]"></textarea>
+						</md-input-container>
+						<md-button ng-click="onClickSendComment(p._id)">
+							Send
+						</md-button>
+					</md-list-item>
+				</md-list>
+			</md-card-content>
+		</md-card>
+	</md-list-item>
+</md-list>

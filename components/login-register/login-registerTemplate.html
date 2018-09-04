@@ -1,0 +1,17 @@
+<div class="cs142-login-register">
+	<md-input-container>
+		<label>Login</label>
+		<input type="text" ng-model="login_name">
+	</md-input-container> </br>
+	<md-input-container>
+		<label>Password</label>
+		<input type="password" ng-model="password">
+	</md-input-container>
+	<div ng-if="errorMsg" class="cs142-login-register-errorMsg">
+		<p>{{errorMsg}}</p>
+	</div>
+	<div>
+		<md-button ng-click="login()">Login</md-button>
+		<md-button ng-click="register()">Register</md-button>
+	</div>
+</div>

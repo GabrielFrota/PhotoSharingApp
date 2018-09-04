@@ -1,0 +1,19 @@
+<div>
+	<p>{{main.userName}}</p>
+	<p>{{u.occupation}}</p>
+	<p>{{u.location}}</p>
+	<p>{{u.description}}</p>
+	<figure>
+		<figcaption>Most recently uploaded photo</figcaption>
+		<a href="{{main.baseUrl}}/photos/{{u._id}}">
+			<img ng-src="images/{{lastUploadedPhoto.file_name}}" width="260px"/>
+		</a>		
+	</figure>
+	<figure>
+		<figcaption>Most commented photo</figcaption>
+		<a href="{{main.baseUrl}}/photos/{{u._id}}">
+			<img ng-src="images/{{mostCommentedPhoto.file_name}}" width="260px"/>
+		</a>	
+	</figure>
+	<a href="{{main.baseUrl}}/photos/{{u._id}}">Photos of {{u.name}}</a>
+</div>

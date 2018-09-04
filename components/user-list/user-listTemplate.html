@@ -1,0 +1,71 @@
+<md-content>
+	<md-list flex>
+		<md-subheader class="cs142-userList-title">
+			{{main.title}}
+		</md-subheader>
+		<md-list-item ng-if="loggedUser" ng-click="null" ng-href="{{main.baseUrl}}/users/{{loggedUser._id}}">
+			<div class="cs142-userList-listItem loggedUser">
+				<p class="cs142-userList-nameP loggedUser">{{loggedUser.first_name}} {{loggedUser.last_name}}</p>
+				<p class="cs142-userList-occupationP loggedUser">{{loggedUser.occupation}}</p>
+				<p class="cs142-userList-locationP loggedUser">{{loggedUser.location}}</p>
+				
+				<p class="cs142-userList-lastP loggedUser">
+					Last activity at {{loggedUser.last_activity.date_time}}
+				</p>
+				
+				<div ng-if="loggedUser.last_activity.activity_type === ACTIVITY_PHOTO_UPLOAD" class="loggedUser">
+					<p>User uploaded new photo</p>
+					<img width="200px" ng-src="images/{{loggedUser.last_activity.photo_file_name}}">
+				</div>
+				<div ng-if="loggedUser.last_activity.activity_type === ACTIVITY_COMMENT_ADDED" class="loggedUser">
+					<p>User commented photo</p>
+					<figure>
+						<img width="200px" ng-src="images/{{loggedUser.last_activity.photo_file_name}}">
+						<figcaption>{{loggedUser.last_activity.comment_text}}</figcaption>
+					</figure>		
+				</div>
+				<div ng-if="loggedUser.last_activity.activity_type === ACTIVITY_USER_REGISTER" class="loggedUser">
+					<p>User registered</p>
+				</div>
+				<div ng-if="loggedUser.last_activity.activity_type === ACTIVITY_USER_LOG_IN" class="loggedUser">
+					<p>User logged in</p>
+				</div>
+				<div ng-if="loggedUser.last_activity.activity_type === ACTIVITY_USER_LOG_OUT" class="loggedUser">
+					<p>User logged out</p>
+				</div>		
+			</div>
+		</md-list-item>
+		<md-list-item ng-repeat="u in userList" ng-click="null" ng-href="{{main.baseUrl}}/users/{{u._id}}">
+			<div class="cs142-userList-listItem">
+				<p class="cs142-userList-nameP">{{u.first_name}} {{u.last_name}}</p>
+				<p class="cs142-userList-occupationP">{{u.occupation}}</p>
+				<p class="cs142-userList-locationP">{{u.location}}</p>		
+						
+				<p class="cs142-userList-lastP">
+					Last activity at {{u.last_activity.date_time}}
+				</p>
+				
+				<div ng-if="u.last_activity.activity_type === ACTIVITY_PHOTO_UPLOAD">
+					<p>User uploaded new photo</p>
+					<img width="200px" ng-src="images/{{u.last_activity.photo_file_name}}">
+				</div>
+				<div ng-if="u.last_activity.activity_type === ACTIVITY_COMMENT_ADDED">
+					<p>User commented photo</p>
+					<figure>
+						<img width="200px" ng-src="images/{{u.last_activity.photo_file_name}}">
+						<figcaption>{{u.last_activity.comment_text}}</figcaption>
+					</figure>		
+				</div>
+				<div ng-if="u.last_activity.activity_type === ACTIVITY_USER_REGISTER">
+					<p>User registered</p>
+				</div>
+				<div ng-if="u.last_activity.activity_type === ACTIVITY_USER_LOG_IN">
+					<p>User logged in</p>
+				</div>
+				<div ng-if="u.last_activity.activity_type === ACTIVITY_USER_LOG_OUT">
+					<p>User logged out</p>
+				</div>
+			</div>		
+		</md-list-item>		
+	</md-list>
+</md-content>
