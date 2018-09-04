@@ -320,9 +320,11 @@ app.get('/user/:id', async (req, res) => {
 });
 
 /*
-  This function is a little tricky to understand, as it has to build
+  Returns all photos from user with _id = :id
+
+  This function is a little tricky to understand, as it has to assemble
   the data from a few different models. It searches in parallel, for all 
-  the user info of all the comments of all the photos in the photosOfUser array, 
+  the user info of all the comments of all the photos in the photos array, 
   blocking on the Promise arrays with Promise.all() before returning.
 */
 app.get('/photosOfUser/:id', async (req, res) => {
