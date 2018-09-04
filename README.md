@@ -3,7 +3,7 @@ This project is the implementation of the programming projects from Stanford's W
 https://web.stanford.edu/class/cs142/
 <br />
 
-This class has a series of projects which are built upon each other, and in the end you have a photo
+This class has a series of projects which are built on top of each other, and in the end you have a photo
 sharing web application, something like an Instagram clone. I did this a while ago, when I was a beginner 
 in Javascript and wanted to do something to get better. 
 I learned a lot from it, but I was just starting and did a lot of very bad coding in it. 
